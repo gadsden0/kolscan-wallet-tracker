@@ -19,12 +19,10 @@ csv_file = f"snapshots/{today}.csv"
 
 def clean_pnl_usd(value):
     value = value.strip()
+    value = value.replace('(', '').replace(')', '')
+    value = value.replace('$', '').replace(',', '')
 
-    if value.startswith('(') and value.endswith(')'):
-        number = value[1:-1]
-        return -float(number.replace('$', '').replace(',', ''))
-
-    return float(value.replace('$', '').replace(',', ''))
+    return float(value)
 
 def clean_pnl_sol(value):
     number = float(value.split()[0].replace(',', ''))
