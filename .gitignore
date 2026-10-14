@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Credentials and local configuration
+*.pem
+*.key
+secrets/
+config.local.*
+
+# Database exports
+*.sql
+*.dump
+*.backup
+
+# Scraper output and private operational data
+snapshots/
+logs/
+*.log
+
+# Local development
+.streamlit/secrets.toml
+.pytest_cache/
+.mypy_cache/
+.DS_Store
